@@ -1,0 +1,33 @@
+Kozmológiai paraméterek:
+------------------------
+COSMOLOGY	1
+Particle_mass	1.0
+Omega_b		0.0
+Omega_lambda	0.6911
+Omega_dm	0.3089
+Omega_r		0.0
+H0		67.74
+startH_0	1191.898919
+a_start		0.1
+
+NONISOTROPIC_EXPANSION	0
+
+LOC_CURV	1
+DENSITY_CELLS	256
+
+Szimuláció paraméterei:
+-----------------------
+IS_PERIODIC	1
+L_box		100
+IC_FILE 	./ic/IC_LCDM_100_135k_Hstart1191
+IC_FORMAT	1
+N_particle	135000
+OUT_DIR		./LCDM/
+a_max		1
+h_0		0.000530242545158534
+mean_err	0.075
+h_min		0.00000530242545158534
+h_max           0.00132560636289633
+ParticleRadi    0.0974297252337127
+FIRST_T_OUT	1.00
+H_OUT		0.50

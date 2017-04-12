@@ -1,0 +1,63 @@
+CCLEA - Cosmological Code with Local Expansion and Averaging
+
+v0.6.1.1
+
+Gábor Rácz, 2016
+Department of Physics of Complex Systems, Eötvös Loránd University
+ragraat@caesar.elte.hu
+
+
+Examples
+***************************************************************************
+
+There is two example parameterfiles in the examples directory:
+-LCDM.param for standard LCDM cosmology example simulation
+-BR.param for statistical backreaction cosmology example simulation
+
+The structure of the parameter file is the following:
+Cosmological parameters:
+------------------------
+COSMOLOGY       1	//Cosmological Simulation, 0=no, 1=yes
+Particle_mass   1.0
+Omega_b         0.0	//Baryon density (in this early version we do not make difference between baryonic and dark matter)
+Omega_lambda    0.0	//Omega for cosmological constant (Lambda)
+Omega_dm        1.0	//Dark matter density
+Omega_r         0.0	//Radiation density
+H0              67.74	//Hubble constant in km/s/Mpc (Used in standard LCDM simulations)
+startH_0        1191.898919	//Initial expansion rate in km/s/Mpc (Used in backreaction simulations)
+a_start         0.1	//Initial scale factor
+
+NONISOTROPIC_EXPANSION  3	//inhomogeneous expansion (Backreaction) (0=standard cosmology, 1=simple backreaction with boxes, 2=backreaction with voronoi-cells, 3=DTFE backreaction, 4=naive SPH backreaction)
+
+LOC_CURV        1	// Using local (=1) or global (=0) curvature in backreaction simulations (only the local curvature is physical)
+DENSITY_CELLS   256	//Nubmer of density cells in each dimension, if inhomogeneous expansion is set to 1, 3, or 4.
+
+Parameters of the simulation:
+-----------------------------
+IS_PERIODIC     1	//periodic boundary conditions, 0=none, 1=nearest images, 2=Ewald forces
+L_box           100	//Linear size of the simulation box in Mpc. If the IC is in gadget format, than the code uses the box size described in the IC header instead of this
+IC_FILE         ./ic/IC_LCDM_100_135k_Hstart1191	//Initial Condition file
+IC_FORMAT       1	//Format of the IC file. 0: ascii, 1:GADGET
+N_particle      135000	//Number of particles
+OUT_DIR         ./BR/	//output directory
+a_max           1	//maximal scalefactor. This specifies the end of the simulation
+h_0             0.000530242545158534	//Initial stepsize in internal time units (47.1482347621227Gy)
+mean_err        0.075	//Prescribed error for the N-body KDK inegrator
+h_min           0.00000530242545158534	//minimal stepsize in internal time units
+h_max           0.00132560636289633	//maximal stepsize in internal time units
+ParticleRadi    0.0974297252337127	//smoothing legth for the force calculation in Mpc
+FIRST_T_OUT     1.00	//first output time in Gy
+H_OUT           0.50	//output frequency in Gy
+
+***************************************************************************
+
+To run the LCDM example simulation, change the working directory to "examples", and start the compliled code with the LCDM.param:
+	cd examples/
+	../CCLEA LCDM.param
+For the backreaction examle:
+	cd examples/
+	../CCLEA BR.param
+
+***************************************************************************
+
+
