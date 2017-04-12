@@ -36,7 +36,7 @@ Mon Not R Astron Soc Lett slx026.
 DOI: 10.1093/mnrasl/slx026
 https://academic.oup.com/mnrasl/article/2982870/Concordance
 
-Paper web site: http://www.vo.elte.hu/papers/2016/avera
+Paper web site: http://www.vo.elte.hu/papers/2017/avera/
 
 This work was supported by NKFI NN 114560. IS acknowledges
 NASA grants NNX12AF83G and NNX10AD53G for support. RB
